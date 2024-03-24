@@ -1,6 +1,6 @@
 import UIKit
 
-// Custom UITableViewCell subclass for task cell
+//
 class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var doneSwitch: UISwitch! // UISwitch 했을을 표시할 수 있는 스위치
@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
            // alert controller 생성
            let alertController = UIAlertController(title: "추가하기", message: "할 일을 추가해 주세요", preferredStyle: .alert)
            
-           // Add text field for title input
+           // 텍스트를 넣기 위한 텍스트 필드 생성
            alertController.addTextField { textField in
                textField.placeholder = "Title"
            }
@@ -67,7 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-         return 1 // Assuming you only have one section
+         return 1 // 1개의 섹션만 있다고 가정할 시
      }
     
     //Table의 행(row) 수를 보고하는 함수
@@ -87,12 +87,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         let task = data[indexPath.row]
         cell.titleLabel.text = task
-        cell.doneSwitch.isOn = false // Set switch state
+        cell.doneSwitch.isOn = false // 스위치의 상태 수정
         
-        // Closure to handle switch value change
-        cell.switchValueChanged = { isOn in            
-            // Use self here if necessary
-            // For example:
+        // 스위치 밸류 변경을 위한 클로저
+        cell.switchValueChanged = { isOn in
             print("Switch value changed to \(isOn)")
         }
 
@@ -108,7 +106,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //    }
 //}
 
-    // UITableViewDelegate method for handling cell selection
+    // 셀 셀렉션을 다루기 위한 UITableViewDelegate 메서드
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected: \(data[indexPath.row])")
         
