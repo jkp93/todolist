@@ -13,6 +13,7 @@
 		716DD3742BAD6E6D00E33C1E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 716DD3732BAD6E6D00E33C1E /* Base */; };
 		716DD3762BAD6E7000E33C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716DD3752BAD6E7000E33C1E /* Assets.xcassets */; };
 		716DD3792BAD6E7000E33C1E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 716DD3782BAD6E7000E33C1E /* Base */; };
+		718DA7172BB0A6DF007D8886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716DD3722BAD6E6D00E33C1E /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 				716DD3762BAD6E7000E33C1E /* Assets.xcassets in Resources */,
 				716DD3792BAD6E7000E33C1E /* Base in Resources */,
 				716DD3742BAD6E6D00E33C1E /* Base in Resources */,
+				718DA7172BB0A6DF007D8886 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
