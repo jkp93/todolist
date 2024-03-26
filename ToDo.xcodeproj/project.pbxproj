@@ -66,10 +66,10 @@
 				716DD3702BAD6E6D00E33C1E /* ViewController.swift */,
 				718DA71D2BB14987007D8886 /* TaskTableViewCell.swift */,
 				716DD3722BAD6E6D00E33C1E /* Main.storyboard */,
+				718DA71E2BB14987007D8886 /* TaskTableViewCell.xib */,
 				716DD3752BAD6E7000E33C1E /* Assets.xcassets */,
 				716DD3772BAD6E7000E33C1E /* LaunchScreen.storyboard */,
 				716DD37A2BAD6E7000E33C1E /* Info.plist */,
-				718DA71E2BB14987007D8886 /* TaskTableViewCell.xib */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";

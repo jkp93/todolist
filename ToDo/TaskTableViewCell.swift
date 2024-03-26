@@ -21,6 +21,8 @@ class TaskTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         doneSwitch.isOn = false // 스위치 값 초기화
+        titleLabel.numberOfLines = 0 // 여러 줄 형성하는 코드
+        titleLabel.preferredMaxLayoutWidth = titleLabel.bounds.width // preferredMaxLayoutWidth 을 label의 길이 만큼 조정
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
