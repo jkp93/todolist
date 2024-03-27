@@ -10,6 +10,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //View 로딩된 후 >>><<<
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "To Do List"
+        if let savedData = UserDefaults.standard.stringArray(forKey: "todoData") {
+            self.data = savedData
+        }
         
         tableView.frame = view.bounds
         
@@ -34,14 +38,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // 텍스트를 넣기 위한 텍스트 필드 생성
         alertController.addTextField { textField in
-            textField.placeholder = "Title"
+            textField.placeholder = "새로 할 일 추가"
         }
         
         // 추가 기능에 액션 추가 (추가하기 버튼)
         let addAction = UIAlertAction(title: "Add", style: .default) { _ in
             if let title = alertController.textFields?.first?.text, !title.isEmpty {
+                
+                //새로운 투두리스트 추가
                 self.data.append(title)
                 self.tableView.reloadData()
+                
+                //UserDefault에 새로운 data array 저장
+                UserDefaults.standard.setValue(self.data, forKey: "todoData")
             }
         }
         alertController.addAction(addAction)
