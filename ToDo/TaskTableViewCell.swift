@@ -22,12 +22,24 @@ class TaskTableViewCell: UITableViewCell {
         super.awakeFromNib()
         doneSwitch.isOn = false // 스위치 값 초기화
         titleLabel.numberOfLines = 0 // 여러 줄 형성하는 코드
-        titleLabel.preferredMaxLayoutWidth = titleLabel.bounds.width // preferredMaxLayoutWidth 을 label의 길이 만큼 조정
+//        titleLabel.preferredMaxLayoutWidth = titleLabel.bounds.width // preferredMaxLayoutWidth 을 label의 길이 만큼 조정
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        // Set preferredMaxLayoutWidth after layout has been updated
+        titleLabel.preferredMaxLayoutWidth = titleLabel.bounds.width
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        doneSwitch.isOn = false
+        titleLabel.attributedText = nil
+    }
+    
 }
 
