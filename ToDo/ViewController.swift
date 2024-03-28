@@ -16,9 +16,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "To Do List"
-        //        if let savedData = UserDefaults.standard.stringArray(forKey: "todoData") {
-        //            self.data = savedData
-        //        }
+        if let savedData = UserDefaults.standard.data(forKey: "todoData") {
+            let decoder = JSONDecoder()
+            if let decodedData = try? decoder.decode([ToDo].self, from: savedData) {
+                self.data = decodedData
+            }
+        }
         
         tableView.frame = view.bounds
         
